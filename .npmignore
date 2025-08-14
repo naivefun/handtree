@@ -1,0 +1,8 @@
+src/
+.ladle/
+tsconfig.json
+tsup.config.ts
+*.stories.*
+.git/
+node_modules/
+.DS_Store

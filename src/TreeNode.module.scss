@@ -1,0 +1,131 @@
+.root {
+  /* Layout structure */
+  .node {
+  }
+  .content {
+    flex-grow: 1;
+  }
+  .title {
+    /* Title container - no specific styles needed */
+  }
+
+  /* Head/chevron area with tree connecting lines */
+  .head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    width: var(--head-width);
+    min-width: var(--head-width);
+    max-width: var(--head-width);
+
+    &.headless {
+      width: 0px;
+      &::before {
+        content: none;
+      }
+      &::after {
+        content: none;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background-color: var(--outline-color);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--outline-color);
+    }
+
+    &.lastNode {
+      &::before {
+        height: 50%;
+      }
+    }
+
+    &.expandable {
+      &::after {
+        width: calc(100% - 20px);
+      }
+    }
+  }
+
+  /* Details section with continuation lines */
+  .details {
+    position: relative;
+    padding-left: var(--head-width);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background-color: var(--outline-color);
+    }
+
+    &.lastNode {
+      &::before {
+        content: none;
+      }
+    }
+
+    &.expandable {
+      padding-left: calc(var(--indent-width) + var(--head-width));
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: var(--indent-width);
+        width: 1px;
+        height: 100%;
+        background-color: var(--outline-color);
+      }
+      &.collpased {
+        padding-left: 28px;
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  /* Indentation guides for tree structure */
+  .indent {
+    position: relative;
+    width: var(--indent-width);
+    min-width: var(--indent-width);
+    max-width: var(--indent-width);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background-color: var(--outline-color);
+    }
+
+    &.ignore {
+      &::before {
+        width: 0;
+        height: 0;
+      }
+    }
+  }
+}

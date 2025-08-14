@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tree component CSS variables */
+:root {
+  --border-color: theme('colors.gray.300');
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --border-color: theme('colors.gray.600');
+  }
+}
