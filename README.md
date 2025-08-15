@@ -8,7 +8,7 @@
 
 A React tree component for **hand-crafted** hierarchical interfaces. Unlike data-driven tree libraries, handtree lets you compose tree structures manually with full control over styling, behavior, and layout.
 
-**[📖 Live Examples & Documentation →](https://username.github.io/handtree/)**
+**[📖 Live Examples & Documentation →](https://naivefun.github.io/handtree/)**
 
 ## Why handtree?
 
@@ -156,7 +156,7 @@ interface TreeNodeProps {
 
 Explore interactive examples and see handtree in action:
 
-**[📖 Live Examples & Documentation →](https://username.github.io/handtree/)**
+**[📖 Live Examples & Documentation →](https://naivefun.github.io/handtree/)**
 
 ### Available Examples
 
