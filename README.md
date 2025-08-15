@@ -152,6 +152,45 @@ Explore interactive examples and see handtree in action:
 - **Interactive JSON Schema Explorer** - Complex nested data with custom styling, expand/collapse state management, and rich details content. Perfect example of handling heterogeneous data structures that resist normalization.
 - **Minimal Example** - Lightweight implementation showing the essential patterns
 
+## Customizing Styles
+
+handtree uses prefixed CSS classes that you can easily override:
+
+```css
+/* Customize tree lines color */
+.handtree-root {
+  --outline-color: #0066cc;
+}
+
+/* Style the expand/collapse icons */
+.handtree-head {
+  color: #666;
+}
+.handtree-head:hover {
+  color: #0066cc;
+}
+
+/* Customize spacing */
+.handtree-root {
+  --indent-width: 32px;
+  --head-width: 30px;
+}
+```
+
+**Available CSS classes:**
+- `.handtree-root` - Root container
+- `.handtree-node` - Individual node wrapper  
+- `.handtree-head` - Expand/collapse area
+- `.handtree-title` - Title content area
+- `.handtree-details` - Details content area
+- `.handtree-content` - Main content wrapper
+- `.handtree-indent` - Indentation guides
+
+**CSS Variables:**
+- `--outline-color` - Tree connecting lines color
+- `--indent-width` - Indentation per level  
+- `--head-width` - Width of expand/collapse area
+
 ## Development
 
 ```bash
