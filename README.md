@@ -39,6 +39,10 @@ Instead of forcing your data into a generic tree format, handtree lets you craft
 
 *Real-world usage: OpenAPI schema editor where each field type (object, array, string, number) has unique rendering, metadata, and interactions. Note the rich details below each field (descriptions, examples, constraints) - this level of content is difficult and often not worth normalizing into a generic tree structure.*
 
+## Used in Production
+
+handtree powers the hierarchical interfaces in [reapi.com](https://reapi.com) - an OpenAPI schema editor and no-code testing platform. It handles complex nested schemas with hundreds of nodes while maintaining smooth performance and user experience.
+
 ## Installation
 
 ```bash
