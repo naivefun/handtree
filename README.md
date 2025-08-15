@@ -1,5 +1,11 @@
 # handtree
 
+[![npm version](https://badge.fury.io/js/handtree.svg)](https://badge.fury.io/js/handtree)
+[![npm downloads](https://img.shields.io/npm/dm/handtree.svg)](https://www.npmjs.com/package/handtree)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/handtree)](https://bundlephobia.com/package/handtree)
+[![TypeScript](https://img.shields.io/badge/TypeScript-ready-blue.svg)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A React tree component for **hand-crafted** hierarchical interfaces. Unlike data-driven tree libraries, handtree lets you compose tree structures manually with full control over styling, behavior, and layout.
 
 **[📖 Live Examples & Documentation →](https://username.github.io/handtree/)**
@@ -26,6 +32,12 @@ handtree is perfect when you need to:
 2. **Different node content and behaviors** for different node types (objects vs arrays vs primitives, each with unique styling and interactions)
 
 Instead of forcing your data into a generic tree format, handtree lets you craft each node type exactly as it should appear and behave.
+
+<a href="./assets/schema-editor.png">
+  <img src="./assets/schema-editor.png" alt="OpenAPI Schema Editor built with handtree" width="600">
+</a>
+
+*Real-world usage: OpenAPI schema editor where each field type (object, array, string, number) has unique rendering, metadata, and interactions. Note the rich details below each field (descriptions, examples, constraints) - this level of content is difficult and often not worth normalizing into a generic tree structure.*
 
 ## Installation
 
