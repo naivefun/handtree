@@ -88,6 +88,17 @@ function SchemaDetails({ data }) {
 
 This way, `JsonSchemaNode` handles the business logic (what's expandable, how to render titles), while `TreeNode` handles the tree visualization (lines, indentation, expand/collapse UI).
 
+## Beyond Title: Rich Details Support
+
+Unlike traditional tree components that only show a title per node, handtree supports rich **details** content below each title. This is perfect for showing:
+
+- **Documentation** (API descriptions, schema details)
+- **Metadata** (file sizes, timestamps, validation rules)  
+- **Status indicators** (health checks, build results)
+- **Secondary actions** (buttons, links, badges)
+
+The details section maintains proper tree indentation and connecting lines, creating a clean hierarchical layout even with complex content.
+
 ## API Reference
 
 ### TreeContext
@@ -131,90 +142,15 @@ interface TreeNodeProps {
 
 ## Examples
 
-### Interactive Tree
+Explore interactive examples and see handtree in action:
 
-```tsx
-function InteractiveExample() {
-  const [expanded, setExpanded] = useState({
-    root: true,
-    folder1: false,
-    folder2: true
-  })
+**[📖 Live Examples & Documentation →](https://username.github.io/handtree/)**
 
-  const toggle = (id: string) => {
-    setExpanded(prev => ({ ...prev, [id]: !prev[id] }))
-  }
+### Available Examples
 
-  return (
-    <TreeContext.Provider value={{ indent: 20, ancestorLastTrail: [], classNames: {} }}>
-      <TreeNode
-        level={0}
-        expandable
-        expanded={expanded.root}
-        onToggleExpanded={() => toggle('root')}
-        title={<span>📁 My Project</span>}
-      >
-        <TreeNode
-          level={1}
-          expandable  
-          expanded={expanded.folder1}
-          onToggleExpanded={() => toggle('folder1')}
-          title={<span>📁 src</span>}
-        >
-          <TreeNode level={2} title={<span>📄 index.ts</span>} />
-          <TreeNode level={2} title={<span>📄 components.tsx</span>} lastNode />
-        </TreeNode>
-        <TreeNode
-          level={1}
-          title={<span>📄 package.json</span>}
-          lastNode
-        />
-      </TreeNode>
-    </TreeContext.Provider>
-  )
-}
-```
-
-### Styled with Custom Content
-
-```tsx
-function StyledExample() {
-  return (
-    <TreeContext.Provider value={{ indent: 30, ancestorLastTrail: [], classNames: {} }}>
-      <TreeNode
-        level={0}
-        expandable
-        expanded={true}
-        title={
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-blue-600">API</span>
-            <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
-              online
-            </span>
-          </div>
-        }
-        details={
-          <div className="text-xs text-gray-500 italic">
-            Production endpoint - handle with care
-          </div>
-        }
-      >
-        <TreeNode
-          level={1}  
-          title={<span className="text-purple-600">/users</span>}
-          details={<span className="text-xs">GET, POST</span>}
-        />
-        <TreeNode
-          level={1}
-          title={<span className="text-purple-600">/auth</span>}
-          details={<span className="text-xs">POST</span>}
-          lastNode
-        />
-      </TreeNode>
-    </TreeContext.Provider>
-  )
-}
-```
+- **Basic Tree View** - Simple hierarchical structure showing the core TreeNode API
+- **Interactive JSON Schema Explorer** - Complex nested data with custom styling, expand/collapse state management, and rich details content. Perfect example of handling heterogeneous data structures that resist normalization.
+- **Minimal Example** - Lightweight implementation showing the essential patterns
 
 ## Development
 
