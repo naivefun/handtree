@@ -12,7 +12,7 @@ export default defineConfig({
   esbuildOptions(options) {
     options.loader = {
       ...options.loader,
-      '.scss': 'css',
+      '.scss': 'local-css',
     }
   },
 })
