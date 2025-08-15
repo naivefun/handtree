@@ -3,7 +3,7 @@ import range from 'lodash-es/range'
 import { PropsWithChildren, ReactNode, useContext } from 'react'
 import { VscChevronDown, VscChevronRight } from 'react-icons/vsc'
 import { TreeContext } from './TreeContext'
-import styles from './TreeNode.module.scss'
+import './TreeNode.scss'
 
 export interface TreeNodeProps {
   level: number // start from 0
@@ -40,14 +40,14 @@ export default function TreeNode({
   }
   return (
     <div
-      className={styles.root}
+      className="handtree-root"
       // @ts-ignore
       style={{
         ...cssVars,
       }}
     >
       <div
-        className={styles.node}
+        className="handtree-node"
         style={{
           display: 'flex',
           position: 'relative',
@@ -59,7 +59,7 @@ export default function TreeNode({
           return (
             <div
               key={i}
-              className={clsx([styles.indent, ignoreIndentOutline && styles.ignore])}
+              className={clsx(['handtree-indent', ignoreIndentOutline && 'handtree-ignore'])}
               style={{
                 width: indent,
               }}
@@ -68,15 +68,15 @@ export default function TreeNode({
         })}
 
         {/* content with title and main */}
-        <div className={styles.content}>
-          <div className={styles.title} style={{ display: 'flex' }}>
+        <div className="handtree-content">
+          <div className="handtree-title" style={{ display: 'flex' }}>
             {/* head */}
             <div
               className={clsx([
-                styles.head,
-                isRoot && styles.headless,
-                lastNode && styles.lastNode,
-                expandable && styles.expandable,
+                'handtree-head',
+                isRoot && 'handtree-headless',
+                lastNode && 'handtree-last-node',
+                expandable && 'handtree-expandable',
                 options.classNames?.chevron,
               ])}
               onClick={onToggleExpanded}
@@ -88,10 +88,10 @@ export default function TreeNode({
           {details && (
             <div
               className={clsx([
-                styles.details,
-                !!children && styles.expandable,
-                lastNode && styles.lastNode,
-                !expanded && styles.collpased,
+                'handtree-details',
+                !!children && 'handtree-expandable',
+                lastNode && 'handtree-last-node',
+                !expanded && 'handtree-collapsed',
               ])}
             >
               <div>{details}</div>
@@ -112,7 +112,7 @@ export default function TreeNode({
             classNames: options.classNames,
           }}
         >
-          <div className={styles.children}>{children}</div>
+          <div className="handtree-children">{children}</div>
         </TreeContext.Provider>
       )}
     </div>

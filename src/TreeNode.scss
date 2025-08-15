@@ -1,16 +1,16 @@
-.root {
+.handtree-root {
   /* Layout structure */
-  .node {
+  .handtree-node {
   }
-  .content {
+  .handtree-content {
     flex-grow: 1;
   }
-  .title {
+  .handtree-title {
     /* Title container - no specific styles needed */
   }
 
   /* Head/chevron area with tree connecting lines */
-  .head {
+  .handtree-head {
     position: relative;
     display: flex;
     align-items: center;
@@ -20,7 +20,7 @@
     min-width: var(--head-width);
     max-width: var(--head-width);
 
-    &.headless {
+    &.handtree-headless {
       width: 0px;
       &::before {
         content: none;
@@ -50,13 +50,13 @@
       background-color: var(--outline-color);
     }
 
-    &.lastNode {
+    &.handtree-last-node {
       &::before {
         height: 50%;
       }
     }
 
-    &.expandable {
+    &.handtree-expandable {
       &::after {
         width: calc(100% - 20px);
       }
@@ -64,7 +64,7 @@
   }
 
   /* Details section with continuation lines */
-  .details {
+  .handtree-details {
     position: relative;
     padding-left: var(--head-width);
 
@@ -78,13 +78,13 @@
       background-color: var(--outline-color);
     }
 
-    &.lastNode {
+    &.handtree-last-node {
       &::before {
         content: none;
       }
     }
 
-    &.expandable {
+    &.handtree-expandable {
       padding-left: calc(var(--indent-width) + var(--head-width));
       &::after {
         content: '';
@@ -95,7 +95,7 @@
         height: 100%;
         background-color: var(--outline-color);
       }
-      &.collpased {
+      &.handtree-collapsed {
         padding-left: 28px;
         &::after {
           content: none;
@@ -105,7 +105,7 @@
   }
 
   /* Indentation guides for tree structure */
-  .indent {
+  .handtree-indent {
     position: relative;
     width: var(--indent-width);
     min-width: var(--indent-width);
@@ -121,7 +121,7 @@
       background-color: var(--outline-color);
     }
 
-    &.ignore {
+    &.handtree-ignore {
       &::before {
         width: 0;
         height: 0;
